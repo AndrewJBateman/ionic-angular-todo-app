@@ -1,6 +1,6 @@
 # Ionic Todo App
 
-Project created in Ionic 4 and using firebase to store todo data. All CRUD operaqtions possible from a user interface. 
+App created using the [Ionic 4 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
 
 ## Table of contents
 
@@ -15,7 +15,9 @@ Project created in Ionic 4 and using firebase to store todo data. All CRUD opera
 
 ## General info
 
-Add more general information about project. What the purpose of the project is? Motivation?
+Note: Angular imports for Firestore are now from '@angular/fire/firestore'.
+
+Todos are passed to/from the firestore database as [observables](https://angular.io/guide/observables).
 
 ## Screenshots
 
@@ -23,40 +25,48 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Technologies
 
-* MongoDB - version 1.0
-* Express.js - version 2.0
-* Angular - version 7.0.0, including [Angular Material](https://material.angular.io/)
-* Node.js
+* Ionic/angular - version 4.0.0
+* Firebase cloudstore - version 5.8.5
 
 ## Setup
 
-Describe how to install / setup your local environement / add link to demo version.
+* To start the server on _localhost://8100_: 'ionic serve'
 
 ## Code Examples
 
-Show examples of usage:
-`put-your-code-here`
+* It was necessary to clear the setting for the firestore timestampsInSnapshots in app.module.ts - see below.
+
+_import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+     ...
+     AngularFirestoreModule,
+     ...
+  ],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }_
 
 ## Features
 
-List of features ready and TODOs for future development
+**CRUD operations:**
 
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Create: Click '+' to create a to-do item.
+* Read: Line items are displayed on the home page.
+* Update: Click on item line to edit.
+* Delete: swipe left and a coloured 'DONE' button appears on the right.
 
-To-do list:
+## Status & To-do list
 
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Status: working basic to-do app.
 
-## Status
-
-Project is: _in progress.
+* To-do: Add more detail to front page.
 
 ## Inspiration
 
-Add here credits. Project inspired by..., based on...
+Project inspired by [Simon Grimm´s 'How to Create a Simple Ionic 4 App with Firebase and AngularFire'](https://www.youtube.com/watch?v=H20l9ofyR54&t=1375s)
 
 ## Contact
 

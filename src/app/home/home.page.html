@@ -1,15 +1,15 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="medium shade">
     <ion-title>
-      Ionic FireTodos
+      Todo List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <ion-list>
 
+    <!-- Add lines of skeleton text bars if there are no todo items already there -->
     <ng-container *ngIf="!todos || todos.length == 0">
       <div *ngFor="let n of [0,1,2]" padding>
         <ion-skeleton-text></ion-skeleton-text>
@@ -19,24 +19,28 @@
       </div>
     </ng-container>
   
+    <!-- A sliding item contains an item that can be dragged to reveal buttons. 
+     item bottom border shown as inset and as a button with the item id. -->
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
-        <ion-label>
+        <ion-label> 
           {{ item.task }}
-          <p>{{ item.createdAt }}</p>
+          <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
         <ion-note slot="end" color="primary">{{ item.priority }}</ion-note>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option (click)="remove(item)" color="secondary">
-          Check
+        <ion-item-option (click)="remove(item)" color="success">
+          Done
           <ion-icon name="checkmark" slot="end"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
 
+  <!-- Use fab button to go the details page,
+  router direction is forward as this is a push operation.  -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed"> 
     <ion-fab-button routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>

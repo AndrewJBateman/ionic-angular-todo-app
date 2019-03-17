@@ -14,6 +14,9 @@ export interface Todo {
   providedIn: 'root'
 })
 export class TodoService {
+  // store todos of type Todo in a database collection. todos are observables.
+  // snapshotChanges() represent the state of the router at a moment in time.
+  // pipe - map function used to extract the id and return a spread array.
   private todosCollection: AngularFirestoreCollection<Todo>;
 
   private todos: Observable<Todo[]>;
@@ -23,9 +26,9 @@ export class TodoService {
 
     this.todos = this.todosCollection.snapshotChanges().pipe(
       map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
+        return actions.map(todo => {
+          const data = todo.payload.doc.data();
+          const id = todo.payload.doc.id;
           return { id, ...data };
         });
       })
