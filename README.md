@@ -21,7 +21,7 @@ Todos are passed to/from the firestore database as [observables](https://angular
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![todo items shown on ionic frontend and in firebase cloud database](./img/todo items frontend and database.png)
 
 ## Technologies
 
@@ -30,23 +30,34 @@ Todos are passed to/from the firestore database as [observables](https://angular
 
 ## Setup
 
-* To start the server on _localhost://8100_: 'ionic serve'
+* To start the server on _localhost://8100_ type: 'ionic serve'
 
 ## Code Examples
 
 * It was necessary to clear the setting for the firestore timestampsInSnapshots in app.module.ts - see below.
 
 _import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+
 @NgModule({
+
   declarations: [AppComponent],
+
   imports: [
+
      ...
+
      AngularFirestoreModule,
+
      ...
+
   ],
+
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
+
   bootstrap: [AppComponent]
+
 })
+
 export class AppModule { }_
 
 ## Features
@@ -62,11 +73,11 @@ export class AppModule { }_
 
 * Status: working basic to-do app.
 
-* To-do: Add more detail to front page.
+* To-do: Add more detail/styling to front page.
 
 ## Inspiration
 
-Project inspired by [Simon Grimm´s 'How to Create a Simple Ionic 4 App with Firebase and AngularFire'](https://www.youtube.com/watch?v=H20l9ofyR54&t=1375s)
+Project inspired by [Simon Grimm´s Youtube video 'How to Create a Simple Ionic 4 App with Firebase and AngularFire'](https://www.youtube.com/watch?v=H20l9ofyR54&t=1375s)
 
 ## Contact
 
