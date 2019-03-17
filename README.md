@@ -21,7 +21,7 @@ Todos are passed to/from the firestore database as [observables](https://angular
 
 ## Screenshots
 
-![todo items shown on ionic frontend and in firebase cloud database](./img/todo items frontend and database.png)
+![todo_items shown on ionic frontend and Firestore database](./img/todo_ items.png)
 
 ## Technologies
 
@@ -37,27 +37,16 @@ Todos are passed to/from the firestore database as [observables](https://angular
 * It was necessary to clear the setting for the firestore timestampsInSnapshots in app.module.ts - see below.
 
 _import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
-
 @NgModule({
-
   declarations: [AppComponent],
-
   imports: [
-
      ...
-
      AngularFirestoreModule,
-
      ...
-
   ],
-
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
-
   bootstrap: [AppComponent]
-
 })
-
 export class AppModule { }_
 
 ## Features
