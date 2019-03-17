@@ -21,7 +21,7 @@ Todos are passed to/from the firestore database as [observables](https://angular
 
 ## Screenshots
 
-![todo_items shown on ionic frontend and Firestore database](./img/todo_ items.png)
+![todo items shown on ionic frontend and Firestore database](./img/todo_items.png)
 
 ## Technologies
 
