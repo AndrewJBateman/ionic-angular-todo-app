@@ -1,6 +1,6 @@
 # Ionic Todo App
 
-App created using the [Ionic 4 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
+App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
 
 ## Table of contents
 
@@ -25,8 +25,13 @@ Todos are passed to/from the firestore database as [observables](https://angular
 
 ## Technologies
 
-* Ionic/angular - version 4.0.0
-* Firebase cloudstore - version 5.8.5
+* [Ionic/angular v4.4.2](https://ionicframework.com/)
+
+* [Ionic v5.7.0](https://ionicframework.com/)
+
+* [Angular v8.0.0](https://angular.io/)
+
+* [Firebase cloudstore v6.1.1](https://firebase.google.com/)
 
 ## Setup
 
@@ -60,7 +65,7 @@ export class AppModule { }_
 
 ## Status & To-do list
 
-* Status: working basic to-do app.
+* Status: Working.
 
 * To-do: Add more detail/styling to front page.
 
@@ -70,4 +75,4 @@ Project inspired by [Simon Grimm´s Youtube video 'How to Create a Simple Ionic 
 
 ## Contact
 
-Created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
