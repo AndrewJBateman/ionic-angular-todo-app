@@ -1,14 +1,11 @@
 <ion-header>
   <ion-toolbar color="medium shade">
-    <ion-title>
-      Todo List
-    </ion-title>
+    <ion-title> Todo List </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-
     <!-- Add lines of skeleton text bars if there are no todo items already there -->
     <ng-container *ngIf="!todos || todos.length == 0">
       <div *ngFor="let n of [0,1,2]" padding>
@@ -18,12 +15,12 @@
         </p>
       </div>
     </ng-container>
-  
+
     <!-- A sliding item contains an item that can be dragged to reveal buttons. 
      item bottom border shown as inset and as a button with the item id. -->
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
-        <ion-label> 
+        <ion-label>
           {{ item.task }}
           <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
@@ -41,10 +38,9 @@
 
   <!-- Use fab button to go the details page,
   router direction is forward as this is a push operation.  -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed"> 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

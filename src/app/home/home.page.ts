@@ -11,7 +11,7 @@ export class HomePage implements OnInit {
 
   constructor(private todoService: TodoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.todoService
       .getTodos()
       .subscribe(res => {
@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
       });
   }
 
-  remove(item) {
+  remove(item: Todo): void {
     this.todoService
       .removeTodo(item.id);
   }

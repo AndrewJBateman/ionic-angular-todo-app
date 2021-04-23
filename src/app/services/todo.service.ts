@@ -1,7 +1,10 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from "@angular/fire/firestore";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 export interface Todo {
   id?: string;
@@ -11,7 +14,7 @@ export interface Todo {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class TodoService {
   // store todos of type Todo in a database collection. todos are observables.
@@ -22,11 +25,11 @@ export class TodoService {
   private todos: Observable<Todo[]>;
 
   constructor(db: AngularFirestore) {
-    this.todosCollection = db.collection<Todo>('todos');
+    this.todosCollection = db.collection<Todo>("todos");
 
     this.todos = this.todosCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(todo => {
+      map((actions) => {
+        return actions.map((todo) => {
           const data = todo.payload.doc.data();
           const id = todo.payload.doc.id;
           return { id, ...data };
@@ -35,23 +38,23 @@ export class TodoService {
     );
   }
   // return observable array of todos
-  getTodos() {
+  getTodos(): Observable<Todo[]> {
     return this.todos;
   }
   // return a todo from database collection by id to view
-  getTodo(id) {
+  getTodo(id: string): Observable<Todo> {
     return this.todosCollection.doc<Todo>(id).valueChanges();
   }
   // return updated todo, using inputs of updated todo and id
-  updateTodo(todo: Todo, id: string) {
+  updateTodo(todo: Todo, id: string): Promise<any> {
     return this.todosCollection.doc(id).update(todo);
   }
   // add a todo (using add not push)
-  addTodo(todo: Todo) {
+  addTodo(todo: Todo): Promise<any> {
     return this.todosCollection.add(todo);
   }
   // delete a todo by id
-  removeTodo(id) {
+  removeTodo(id: string): Promise<any> {
     return this.todosCollection.doc(id).delete();
   }
 }

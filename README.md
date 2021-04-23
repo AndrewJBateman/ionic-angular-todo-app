@@ -1,6 +1,6 @@
 # :zap: Ionic Todo App
 
-App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
+* App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
 
 ## :page_facing_up: Table of contents
 
@@ -24,10 +24,10 @@ App created using the [Ionic 5 framework](https://ionicframework.com/docs), usin
 
 ## :signal_strength: Technologies
 
-* [Ionic/angular v4.4.2](https://ionicframework.com/)
-* [Ionic v5.7.0](https://ionicframework.com/)
-* [Angular v8.0.0](https://angular.io/)
-* [Firebase cloudstore v6.1.1](https://firebase.google.com/)
+* [Ionic/angular v5](https://ionicframework.com/)
+* [Ionic v5](https://ionicframework.com/)
+* [Angular v11](https://angular.io/)
+* [Firebase cloudstore v8](https://firebase.google.com/)
 
 ## :floppy_disk: Setup
 
@@ -70,6 +70,10 @@ export class AppModule { }
 
 * Project inspired by [Simon Grimm´s Youtube video 'How to Create a Simple Ionic 4 App with Firebase and AngularFire'](https://www.youtube.com/watch?v=H20l9ofyR54&t=1375s)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
