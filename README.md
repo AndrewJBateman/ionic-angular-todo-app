@@ -1,6 +1,13 @@
 # :zap: Ionic Todo App
 
-* App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data. All CRUD operaations can be carried out using the Ionic UI.
+* App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data.
+* All CRUD operations can be carried out using the Ionic UI.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
+
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/ionic-angular-todo-app?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/ionic-angular-todo-app?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/ionic-angular-todo-app?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/ionic-angular-todo-app?style=plastic)
 
 ## :page_facing_up: Table of contents
 
