@@ -33,11 +33,12 @@
 
 * [Ionic/angular v5](https://ionicframework.com/)
 * [Ionic v5](https://ionicframework.com/)
-* [Angular v11](https://angular.io/)
+* [Angular v12](https://angular.io/)
 * [Firebase cloudstore v8](https://firebase.google.com/)
 
 ## :floppy_disk: Setup
 
+* Add firebase access credentials in `environment.ts`
 * To start the server on _localhost://8100_ type: 'ionic serve'
 
 ## :computer: Code Examples
@@ -70,7 +71,7 @@ export class AppModule { }
 
 ## :clipboard: Status & To-do list
 
-* Status: Working.
+* Status: Working. Updated june 2021.
 * To-do: Add more detail/styling to front page.
 
 ## :clap: Inspiration
