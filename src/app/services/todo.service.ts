@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-} from "@angular/fire/firestore";
+} from "@angular/fire/compat/firestore";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
@@ -21,18 +21,16 @@ export class TodoService {
   // snapshotChanges() represent the state of the router at a moment in time.
   // pipe - map function used to extract the id and return a spread array.
   private todosCollection: AngularFirestoreCollection<Todo>;
-
   private todos: Observable<Todo[]>;
 
   constructor(db: AngularFirestore) {
-    this.todosCollection = db.collection<Todo>("todos");
+    this.todosCollection = db.collection<Todo>("todos", ref => ref.orderBy("priority"));
 
     this.todos = this.todosCollection.snapshotChanges().pipe(
       map((actions) => {
         return actions.map((todo) => {
-          const data = todo.payload.doc.data();
-          const id = todo.payload.doc.id;
-          return { id, ...data };
+          //loops through todos and returns item with id
+          return { id: todo.payload.doc.id, ...todo.payload.doc.data() };
         });
       })
     );
