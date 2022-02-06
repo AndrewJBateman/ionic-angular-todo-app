@@ -1,6 +1,6 @@
 # :zap: Ionic Todo App
 
-* App created using the [Ionic 5 framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data.
+* App created using the [Ionic framework](https://ionicframework.com/docs), using a firebase cloud database to store to-do data.
 * All CRUD operations can be carried out using the Ionic UI.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -22,19 +22,21 @@
 
 ## :books: General info
 
-* Note: Angular imports for Firestore are now from '@angular/fire/firestore'.
+* Note: Angular imports for Firestore are now from '@angular/fire/compat/firestore'.
 * Todos are passed to/from the firestore database as [observables](https://angular.io/guide/observables).
+* Todos are now sorted by priority using `this.todosCollection = db.collection<Todo>("todos", ref => ref.orderBy("priority"));` in `todo.service.ts`
 
 ## :camera: Screenshots
 
-![todo items shown on ionic frontend and Firestore database](./img/todo_items.png)
+![todo items shown on ionic frontend and Firestore database](./imgs/todo_items.png)
+![todo items shown on ionic frontend and Firestore database](./imgs/todos.png)
 
 ## :signal_strength: Technologies
 
-* [Ionic/angular v5](https://ionicframework.com/)
-* [Ionic v5](https://ionicframework.com/)
-* [Angular v12](https://angular.io/)
-* [Firebase cloudstore v8](https://firebase.google.com/)
+* [Ionic/angular v6](https://ionicframework.com/)
+* [Ionic v6](https://ionicframework.com/)
+* [Angular v13](https://angular.io/)
+* [Firebase cloudstore v9](https://firebase.google.com/)
 
 ## :floppy_disk: Setup
 
@@ -43,7 +45,7 @@
 
 ## :computer: Code Examples
 
-* It was necessary to clear the setting for the firestore timestampsInSnapshots in app.module.ts - see below.
+* It was necessary to clear the setting for the firestore timestampsInSnapshots & add `merge: true` in `app.module.ts` to avoid errors - see below.
 
 ```typescript
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
@@ -54,7 +56,7 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
      AngularFirestoreModule,
      ...
   ],
-  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [{ provide: FirestoreSettingsToken, useValue: { timestampsInSnapshot: true, merge: true } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -71,8 +73,8 @@ export class AppModule { }
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Updated june 2021.
-* To-do: Add more detail/styling to front page.
+* Status: Working.
+* To-do: Add more detail/styling to front page. Add ESLint. Limit priority number to `1 to 10`
 
 ## :clap: Inspiration
 
