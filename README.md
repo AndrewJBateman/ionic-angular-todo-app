@@ -42,6 +42,7 @@
 
 * Add firebase access credentials in `environment.ts`
 * To start the server on _localhost://8100_ type: 'ionic serve'
+* `npm run build` to create build artifacts in `www` folder
 
 ## :computer: Code Examples
 
