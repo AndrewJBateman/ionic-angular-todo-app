@@ -24,7 +24,9 @@ export class TodoService {
   private todos: Observable<Todo[]>;
 
   constructor(db: AngularFirestore) {
-    this.todosCollection = db.collection<Todo>("todos", ref => ref.orderBy("priority"));
+    this.todosCollection = db.collection<Todo>("todos", (ref) =>
+      ref.orderBy("priority")
+    );
 
     this.todos = this.todosCollection.snapshotChanges().pipe(
       map((actions) => {

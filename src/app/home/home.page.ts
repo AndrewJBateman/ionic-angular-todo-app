@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Todo, TodoService } from '../services/todo.service';
+import { Component, OnInit } from "@angular/core";
+import { Todo, TodoService } from "../services/todo.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: "app-home",
+  templateUrl: "home.page.html",
+  styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit {
   todos: Todo[];
@@ -12,16 +12,12 @@ export class HomePage implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.todoService
-      .getTodos()
-      .subscribe(res => {
-        this.todos = res;
-      });
+    this.todoService.getTodos().subscribe((res) => {
+      this.todos = res;
+    });
   }
 
   remove(item: Todo): void {
-    this.todoService
-      .removeTodo(item.id);
+    this.todoService.removeTodo(item.id);
   }
-
 }
