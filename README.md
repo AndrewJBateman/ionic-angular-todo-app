@@ -39,7 +39,7 @@
 
 * [Ionic/angular v6](https://ionicframework.com/)
 * [Ionic v6](https://ionicframework.com/)
-* [Angular v14](https://angular.io/)
+* [Angular v15](https://angular.io/)
 * [Firebase cloudstore v9](https://firebase.google.com/)
 
 ## :floppy_disk: Setup
